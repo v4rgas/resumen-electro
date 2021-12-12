@@ -1,0 +1,520 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[margin=5mm]{geometry}
+\usepackage[spanish]{babel}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Resumen Electricidad y Magnetismo}
+\author{Nataly Roman y Juan Vargas}
+
+\begin{document}
+\maketitle
+
+\begin{multicols*}{2}
+	\section{Ley de Coulomb y campo eléctrico}
+	\subsection{Ley de Coulomb}
+  \begin{gather}
+	\intertext{La fuerza entre dos cargas con distancia r entre ellas, esta dada por:}
+	\vec{F} = \frac{k q_1 q_2}{r^2}
+	\intertext{Si r es la posicion desde donde mido el campo vectorial y r' la posicion donde se
+	encuentra el campo vectorial, entonces la fuerza estará dada por:}
+	\vec{F} = \frac{k q_1 q_2 (\vec{r}-\vec{r}\ ')}{|\vec{r}-\vec{r}\ '|^3}
+  \intertext{Si es que existen multiples cargas y se quiere medir la fuerza sobre
+	Q entonces:}
+  \sum \vec{F} = \sum_{q_i} \frac{k Q q_i (\vec{r}-\vec{r}\ ')}{|\vec{r}-\vec{r}\ '|^3}
+  \end{gather}
+	\subsection{Campo eléctrico}
+  El campo eléctrico que produce una carga q, con r como la distancia desde donde se mido está dado por:
+  \begin{gather}
+    \vec{E} = k\frac{q}{r^2}                                                                                    
+    \intertext{Si r es la posicion desde donde se mide el campo vectorial y r' la posicion del campo, entonces:}
+    \vec{E} = \frac{k q (\vec{r}-\vec{r}\ ')}{|\vec{r}-\vec{r}\ '|^3}                                           
+    \intertext{Es importante destacar que, al fuerza ejercida sobre Q es igual a}
+    \vec{F} = Q \vec{E}(\vec{r})
+    \intertext{El campo eléctrico provocado por un objeto continuo está dado por:}
+    E(\vec{r}) = k \int \frac{dq (\vec{r}-\vec{r'})}{|\vec{r}-\vec{r'}|^3}
+  \end{gather}
+  Algunos campos notable son:
+  \begin{align}
+    \vec{E}_{alambre-infinito} &= \frac{1}{2 \pi \epsilon_0}\frac{\lambda}{r} \hat{r} \\
+    \vec{E}_{placa-infinita} &= \frac{\sigma}{2\epsilon_0} \hat{n} \\
+    \vec{E}_{placa-opuestas} &= \frac{\sigma}{\epsilon_0} \hat{n}
+    \intertext{Punto a distancia z del centro de disco de radio R}
+    \vec{E}_{disco}&= \frac{\sigma z}{2 \epsilon_{0}}(\frac{1}{|z|}-\frac{1}{\sqrt{z^2 + R^2}})
+  \end{align}
+	\section{Ley de Gauss}
+  El flujo electrico se defino como la cantidad de campo que atraviesa perpendicularmente una superficie:
+  \begin{gather}
+    \phi = \vec{E} \cdot \vec{A} = \int_S \vec{E} \cdot dS
+    \intertext{La ley de Gauss dice que el flujo electrico sobre una superficie
+    solo depende de su carga encerrada. El flujo en una superficie que encierra
+    una carga q está dado por:}
+    \phi = \frac{q}{\epsilon_0}
+    \intertext{Entonce se tiene que la ley de Gauss dice:}
+    \int_S \vec{E} \cdot dS = \frac{q}{\epsilon_0}
+  \end{gather}
+  Es importante notar que \textbf{dentro de un conductor no existe campo electrico.} ya que
+  las cargas inducidas en en la cara interior y exterior se cancelan
+  \section{Trabajo y energía}
+  El trabajo se define como:
+  \begin{gather}
+    W = Q \Delta V
+    \intertext{Notar que cuando una particula con carga \textbf{q} se mueve a \textbf{d}
+    en un campo es uniforme se cumple que:}
+    W_{a \rightarrow b} = q \vec{E} \vec{d}
+    \intertext{La energia potencial de cargas puntales a distancia $r_{ij}$ es igual a}
+    U = k \sum_i^n \sum_{j<i} \frac{q_i q_j}{r_{ij}}
+  \end{gather}
+	\section{Potencial Eléctrico}
+	\subsection{Potencial eléctrico}
+	\subsubsection{Definición:}
+  Es el trabajo realizado por unidad de carga para mover 
+  dicha carga por un campo electrostático (conservativo).
+	\begin{equation}
+	  V(r) = -\int^{\vec{r}}_\infty \vec{E} \cdot d\vec{l}
+	\end{equation}
+	El potencial esta dado por
+  \begin{equation}
+    V(\vec{r}) = \begin{cases} k \sum_i \frac{q_i}{|\vec{r} - \vec{r'}|} \text{ para cargas puntuales}
+    \\ k \int \frac{1}{|\vec{r} - \vec{r'}|} dq \text{ para distribuciones continuas} \end{cases}
+  \end{equation} 
+	La diferencia de potencial entre dos puntos $\vec{r}_a$ y $\vec{r}_b$ es
+  \begin{equation}
+    \Delta V_{a \rightarrow b} = V(\vec{r}_b)-V(\vec{r}_a)=- \int_{\vec{r}_a}^{\vec{r}_b}\vec{E}\cdot d\vec{l}
+  \end{equation}
+	Importante notar:
+	\begin{equation}
+	  E = - \nabla V
+	\end{equation}
+	\subsubsection{Dipolo eléctrico:}
+  Consiste de dos cargas iguales pero opuestas, separadas por una distancia d
+	    
+	El potencial eléctrico en un punto P esta definido por
+  \begin{equation}
+    \frac{1}{4 \pi \epsilon_0}(\frac{q}{r_+} - \frac{q}{r_-})
+  \end{equation}
+	Donde $r_+$ es la distancia desde P hacia la carga positiva y $r_-$ desde P a la carga negativa.
+	    
+	Lo que es equivalente a 
+  \begin{equation}
+    V(\vec{r})= \frac{1}{4 \pi \epsilon_0}\frac{\vec{p}\cdot\hat{r}}{r^2}
+  \end{equation}
+	Donde $\vec{p}$ es el \textbf{momento dipolar} definido por
+  \begin{equation}
+    \vec{p}=q\vec{r}'_+-q\vec{r}'_-=q(\vec{r}'_+-\vec{r}'_-)=qd
+  \end{equation}
+	Para una distribución continua de carga $\rho$
+  \begin{equation}
+    \vec{p}= \int \vec{r}'\rho(\vec{r}') d \tau'
+  \end{equation}
+	Densidad de carga lineal: $dq'=\lambda(\vec{r}')dl'$\\
+	Densidad de carga superficial: $dq'=\sigma(\vec{r}')da'$\\
+	Densidad de carga volumétrica: $dq'= \rho(\vec{r}')d\tau'$\\
+	\subsubsection{Potencial eléctrico de un cascarón esférico:}
+  Si r está fuera del cascarón y este tiene una densidad de carga superficial constante $\sigma$,
+	\begin{equation}
+    V(r) = \frac{1}{4 \pi \epsilon_0} \frac{q}{r} = \frac{R^2 \sigma}{\epsilon_0 r}
+  \end{equation}
+	Si está dentro:
+  \begin{equation}
+    V(r) = \frac{1}{4 \pi \epsilon_0} \frac{q}{R} = \frac{R \sigma}{\epsilon_0}
+  \end{equation}
+	Donde R es el radio total de la esfera.
+	    
+	\subsubsection{Ecuación de Poisson:}
+  \begin{equation}
+    \nabla^2V=-\frac{\rho}{\epsilon_0}
+  \end{equation}
+	En ausencia de cargas, se tiene la \textbf{ecuacion de Laplace} 
+  \begin{equation}
+    \nabla ^2V=0
+  \end{equation}
+	\subsubsection{Trabajo y energía en electrostática:} 
+	En cualquier punto, la fuerza eléctrica sobre Q es
+  \begin{gather}
+	\vec{F} = Q\vec{E}
+	\intertext{Por lo tanto se debe ejercer una fuerza $-Q\vec{E}$ para mover una carga. El trabajo ejercido está dado por}
+  W = \int_{\vec{a}}^{\vec{b}} \vec{F}_{\text{ext}} d\vec{l} = -Q[V(\vec{b}) - V(\vec{a})]
+	\intertext{El potencial eléctrico entre $\vec{a}$ y $\vec{b}$}
+	\Delta V=V(\vec{b})-V(\vec{a})=\frac{W}{Q}
+  \end{gather}
+	    
+	\textbf{Movimiento de una carga eléctrica en un campo eléctrico uniforme}
+	para una distancia d y una carga $q_0$
+	$$V_b - V_a = -E d$$
+	El cambio de energia potencial desde A a B
+	$$\Delta U = q_0 \Delta V = - q_o E d$$
+	Si se mueve desde el reposo, su velocidad en B es
+	$$\Delta K+\Delta U =0 \implies \frac{1}{2}mv^2=q_0Ed=0$$
+	$$ \implies v= \sqrt{\frac{2q_0Ed}{m}}$$
+	    
+	\textbf{Energía de un conjunto de cargas puntuales:}
+	El trabajo necesario para reunir N cargas, o equivalentemente, la energia almacenada en el sistema es
+	$$W=\frac{1}{2} \sum _{i=1}^N q_iV(\vec{r}_i)$$
+	\textbf{Energía de una distribución continua de cargas:}
+	Para una distribución espacial de carga $\rho$, la energía está dada por
+	$$W = \frac{1}{2} \int \rho(\vec{r}) V(\vec{r}) d\tau = \frac{\epsilon_0}{2} \int_{R^3} |\vec{E}|^2 d\tau$$
+	    
+	\textbf{Superficies equipotenciales: }Un conjunto de puntos que tienen el mismo potencial electrico V forman una superficie equipontencial. El campo electrico es siempre perpendicular a las superficies equipotenciales, es decir, $\Delta V=0 \implies W=q \Delta V=0$. El trabajo realizado para mover una particula Q esta dada por $\Delta W = Q \Delta V$
+	    
+	\textbf{Condiciones de borde}
+	Si la superficie es perpendicular al campo:
+	$$E_{\text{arriba}}^{\perp} - E _{\text{abajo}}^{\perp}=\frac{\sigma}{\epsilon_0}$$
+	Si la superficie es paralela al campo:
+	$$E_{\text{arriba}}^{\parallel}=E_{\text{abajo}}^{\parallel}$$
+	    
+	\textbf{Conductores en equilibrio electrostático:} Existe cuando no hay ningún movimiento neto de carga dentro del conductor.
+	El flujo del campo electrico por el cilindro gaussiano es 
+	$$\psi _E = \oint\vec{E}\cdot d\vec{a}=EA=\frac{Q_{\text{enc}}}{\epsilon_0}=\frac{\sigma A}{\epsilon_0} \implies E=\frac{\sigma}{\epsilon_0}$$
+	    
+	\textbf{Cargas inducidas}
+	Una carga q induce una carga -q en la superficie de un conductor sin carga.
+	    
+	    
+	    
+	\section{Capacitancia y dieléctricos}
+	\subsection*{Condensadores}
+	\textbf{Definición:} Dos conductores separados por un aislante(o vacío) forman un condensador que puede almacenar cargar eléctrica.
+	    
+	\textbf{Capacitancia:} Es la constante de proporcionalidad entre la carga y la diferencia de potencial. $$C = \frac{Q}{\Delta V}$$
+	    
+	\textbf{Placas paralelas:} Siempre que la distancia entre las placas (d) sea considerablemente menor que el área de las placas (A) la \textbf{densidad superficial} de la carga sera $ \sigma = Q/A $ y su \textbf{campo eléctrico} $$E = \frac{\sigma}{\epsilon_0} = \frac{Q}{A \epsilon_0}$$
+	La diferencia de potencial esta dada por 
+  $$ V = Ed = \frac{Qd}{A\epsilon_0} \implies C = \frac{A\epsilon_0}{d}$$ 
+	    
+	\textbf{Condensador esférico}
+	Sabemos que $\vec{E} = \frac{1}{4 \pi \epsilon_0} \frac{Q}{r^2}\hat{r}$.
+
+	Si los radios b y a cumplen que $b<a$
+	$$C = \frac{4 \pi \epsilon_0 ab}{(b-a)}$$
+	    
+	\textbf{Condensador cilíndrico}
+	Sabemos que $\vec{E} = \frac{Q}{2 \pi \epsilon_0 r L}$
+	Si los radios b y a cumplen que $b<a$
+	$$C = \frac{2 \pi \epsilon_0 L}{ln(b/a)}$$
+	    
+	\textbf{Energia almacenada:}  Cuando se \textbf{carga} un condensador se transfieren electrones de la placa positiva a la placa negativa realizando trabajo.
+	$$dW = Vdq = \frac{q}{C}dq $$
+	$$\int_0^Q \frac{q}{C}dq = \frac{Q^2}{2C} = \frac{1}{2}CV^2 = \frac{1}{2}QV$$
+	    
+	\textbf{Capacitores en paralelo:} Para dos capacitores combinados en paralelo con capacitancias $C_1$ y $C_2$.
+	$$\Delta V_1 = \Delta V_2 = \Delta V$$
+	$$Q_{tot} = Q_1 + Q_2 =C_{eq} \Delta V$$
+	La capacitancia equivalente es
+	$$C_{eq}=C_1 + C_2$$
+	    
+	\textbf{Capacitores en serie:} Para dos capacitores combinados en serie.
+	$$\Delta V =\Delta V_1 + \Delta V_2 $$
+	$$Q = Q_1 = Q_2$$
+	$$\Delta V = \frac{Q}{C_{eq}}$$
+	Por lo tanto, la capacitancia:
+	$$ \frac{1}{C_{eq}} = \frac{1}{C_1}+\frac{1}{C_2}$$
+	    
+	    
+	\subsection*{Dieléctricos}
+	\textbf{Definición:} Corresponden a materiales aislantes, donde las cargas no son capaces de moverse por el material. La suma de sus desplazamientos microscópicos generan las propiedades de los dieléctricos.
+	    
+	\textbf{Polarización:} Un átomo neutro en un campo eléctrico, mueve su núcleo cargado positivamente en una dirección, y su nube de electrones en una dirección opuesta. Ahora el átomo tiene un \textbf{Momento dipolar} en la misma dirección de $\vec{E}$ $$\vec{p}= \alpha \vec{E}$$
+	donde $\alpha$ es la polarizabilidad atómica.
+	    
+	Para un átomo con un núcleo puntual y una distribución esférica de carga de \textbf{radio a}:
+	$$\alpha = 4 \pi \epsilon_0 a^3 = 3 \epsilon_0 v$$
+	     
+	El campo electrico que generado por la nube de electrones equilibra el campo electrico externo $$E_e = \frac{1}{4 \pi \epsilon _0} \frac{qd}{a^3} \implies p \equiv qd = 4 \pi \epsilon_0a^3E$$
+	    
+	Una molécula polar puede ser modelada como un dipolo eléctrico.
+	    
+	\textbf{Dipolo eléctrico en un campo eléctrico:} En presencia de un campo eléctrico $\vec{E}$ un dipolo eléctrico formado por cargas -q y +q, con un momento dipolar $\vec{p}$ en esta dirección, separados a una distancia $2a$, las cargas experimentan una fuerza de magnitud $F=qE$. Un dipolo $\vec{p} =q \vec{d}$ experimenta un torque 
+	$$\tau = \vec{p} \times \vec{E}$$
+	    
+	En un dipolo se tiende a alinear el momento dipolar con el campo eléctrico, lo que provoca que el material se polarice. Este efecto es cuantificado por el momento dipolar por unidad de volumen $\vec{P}$, conocido tambien como polarizacion.
+	$$\vec{P} = (\epsilon - \epsilon_0) \vec{E}$$
+	Si es campo eléctrico no es uniforme, existirá una fuerza neta $\vec{F}$ además del torque.
+	    
+	\textbf{Potencial electroestatico}: El potencial de un dipolo en un punto es 
+	$$V(\vec{r})=\frac{1}{4 \pi \epsilon_0} \frac{(\vec{r}- \vec{r}') \cdot \vec{p}}{|\vec{r}- \vec{r}'|^3}$$
+	    
+	$$V(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \oint_S \frac{\sigma_b (\vec{r'})}{|\vec{r}-\vec{r'}|}da' + \frac{1}{4 \pi \epsilon_0} \int_V \frac{\rho_b(\vec{r'})}{|\vec{r}-\vec{r'}|} d \tau '$$
+	O sea el potencial de un objeto polarizado es igual a la suma de la distribución de carga volumétrica $-\nabla \cdot \vec{P}$, lo que es equivalente a la acumulacion de carga ligada, y la distribución de carga superficial $\sigma_b \equiv \vec{P} \cdot \hat{n}$
+	    
+	\textbf{Desplazamiento eléctrico:} Dentro de un dielectrico, la densidad de carga total es $\rho = \rho_b + \rho_f$ donde $\rho_f$ es la densidad de carga libre.
+	La ley de Gauss queda como 
+	$$\epsilon_0 \nabla \cdot \vec{E} = \rho _b + \rho_f = - \nabla \cdot \vec{P} = \rho _f$$
+	$$\nabla \cdot (\epsilon_0 \vec{E} + \vec{P) = \rho _f}$$
+	    
+	El desplazamiento eléctrico se define como $\vec{D} \equiv \epsilon_0 \vec{E + \vec{P}}$. Por lo tanto, la ley de Gauss queda como
+	$$\nabla \cdot \vec{D} = \rho_f$$
+	$$\oint \vec{D} \cdot d\vec{S}= Q_f$$
+	donde $Q_f $ es la carga libre total encerrada por el volumen y S corresponde un vector que sale de la superficie.
+	    
+	\textbf{Condiciones de borde:} El desplazamiento eléctrico $\vec{D}$ satisface:
+	$$D_{\text{arriba}}^{\perp} - D_{\text{abajo}}^{\perp}=\sigma _f$$
+	$$D_{\text{arriba}}^{\parallel} - D_{\text{abajo}}^{\parallel}=P_{\text{arriba}}^{\parallel} - P_{\text{abajo}}^{\parallel}$$
+	    
+	\textbf{Medios dieléctricos lineales: }Para muchas sustancias, la polarización es proporcional a una intensidad del campo eléctrico.
+	$$\vec{P} = \epsilon_0 \mathcal{X}_e \vec{E}$$
+	Donde $\vec{E}$ es el campo eléctrico total. \textbf{La constante $\mathcal{X}_e$ es la susceptibilidad eléctrica del medio}.
+	Los medios que obedecen esta ecuación son llamados \textbf{dieléctricos lineales.}
+	El vector \textbf{desplazamiento} para un \textbf{dielectrico lineal} es:
+	$$\vec{D}= \epsilon_0\vec{E}+ \vec{P} = \epsilon_0\vec{E}+ \epsilon_0\mathcal{X}_e\vec{E}= \epsilon_0(1+\mathcal{X}_e)\vec{E}\equiv \epsilon\vec{E}$$
+	donde $\epsilon =\epsilon_0(1+\mathcal{X}_e)$ es la permitividad del material.
+	La permitividad relativa o \textbf{constante dieléctrica} es
+	$$\epsilon_r \equiv \frac{\epsilon}{\epsilon_0}= \frac{C_f}{C_i} = 1 -\mathcal{X}_e$$
+	     
+	\textbf{Campo eléctrico en un medio dieléctrico lineal homogéneo: }En general no se cumple que $\nabla \times \vec{D}=0$. Si el medio llena completamente el espacio se tiene $$\nabla \cdot \vec{D}=\rho _f$$
+	$$\nabla \times \vec{D}=0$$
+	Por lo tanto, 
+	$$\vec{D}= \epsilon_0 \vec{E}_{\text{vacio}}$$
+	$$\vec{D}=\kappa \epsilon_0 \vec{E}$$
+	Donde $\vec{E}_{\text{vacio}}$ es el campo electrico con la misma distribucion de carga $\rho_f$ en el vacío.
+	Entonces, el campo electrico es:
+	$$\vec{E}= \frac{1}{\epsilon}\vec{D}= \frac{1}{\epsilon_r}\vec{E}_{\text{vacío}} < \vec{E}_{\text{vacio}}$$
+	Asi, el potencial electrico V se reduce a un factor $\epsilon_r$\\
+	En un \textbf{condensador de placas paralelas } con \textbf{medio dieléctrico} entre las placas, su capacidad esta dad por $$C = \epsilon _r C_{\text{vacío}}$$
+	    
+	\textbf{Capacitores con material dieléctrico}
+	Al poner un dieléctrico entre dos placas, se disminuye la diferencia de potencial de $\Delta V_0$ a $\Delta V$ donde
+	$$\Delta V = \frac{\Delta V_0}{\kappa}$$
+	$\kappa$ es la constante dieléctrica del material
+	Y como la carga permanece constante, la capacitancia cambia:
+	$$C = \kappa C_o = \frac{Q_0}{\Delta V}$$
+	El campo electrico neto en el dielectrico es
+	$$E= E_0 -  E_{\text{ind}} = \frac{E_0}{\kappa}$$
+	El campo electrico inducido esta dado por la densidad de carga inducida
+	$$E=\frac{\sigma}{\kappa \epsilon_0}= \frac{\sigma}{\epsilon_0}- \frac{\sigma_{\text{inf}}}{\epsilon_0} \implies \sigma_{\text{ind}} = (\frac{\kappa -1}{\kappa})\sigma$$
+	$$C = \frac{\sigma}{\epsilon}$$
+	    
+	\section{Corriente, Resistencia y Fuerza Electromotriz}
+	\subsection{Corriente eléctrica}
+	Se define como la carga que pasa por una sección transversal de un alambre por unidad de tiempo. Por convención, la corriente tiene el sentido del movimiento de las cargas positivas.
+	$$I = \frac{dQ}{dt}$$
+	Si la corriente es debida a cargas q, con densidad de numero por volumen $n$, con velocidad $v_d$, la cantidad de carga que pasa por $P$ es
+	$$\Delta Q= qn(Av_d\Delta t)$$
+	
+	\subsubsection{Densidad de corriente:} Se define como
+	$$J=\frac{I}{A}=nqv_d$$
+	Si se trata de un volumen, $\vec{J}(\vec{x})$ en el punto $\vec{x}$ es
+	$$dI=\vec{J}\cdot d \vec{A}$$
+	donde $dI$es la carga neta en el tiempo pasando por un área $d\vec{A}$.\\
+	Si la corriente es debido a cargas q con velocidad media $\vec{v}$, entonces esta dada por
+	$$J=qn\vec{n}$$
+	    
+	\subsubsection{Conservación de carga:} La carga neta de un sistema aislado es constante, es descrita por la \textbf{ecuación de continuidad}.
+	$$\nabla J + \frac{\partial \rho}{\partial t} = 0$$
+	donde $\rho(\vec{x},t)$ es la densidad de carga volumétrica.\\
+	De esto se obtiene la forma integral $$\oint_{\mathcal{S}}\vec{J}\cdot d\vec{A}=-\frac{d}{dt}\int_{\mathcal{V}}\rho d^3 x=-\frac{dQ}{dt}$$
+	    
+	\subsection{Resistencia}
+	\subsubsection{Ley de Ohm}
+	Si ambos extremos de un conductor son mantenidos con una diferencia de potencial, entonces va a existir una corriente constante I a través del conductor.
+	$$V = IR$$
+	Donde R es la resistencia del conductor medida en $1 \omega = 1 V/A$ y en el caso de una resistencia cilíndrica de largo L y sección transversal A esta dada por 
+	$$R=\frac{\rho L}{A}$$
+	Donde $\rho$ es la resistividad del material.
+	Se define la \textbf{conductividad }del material como $\sigma=1/\rho$.\\
+	Si se esta en presencia de \textbf{conductores isótropos}, la ley de Ohm puede ser escrita localmente como $$\vec{J}(\vec{x})=\sigma\vec{E}(\vec{x})$$
+	Para un cilindro de largo L y sección transversal A con una diferencia de potencial $\Delta V$, la magnitud de campo eléctrico es
+	$$E=\frac{\Delta V}{L}$$
+	La densidad de corriente es
+	$$J= \frac{I}{A}=\sigma E=\sigma \frac{\Delta V}{L }\implies \Delta V = (\frac{L}{\sigma A})I$$
+	Por lo tanto, la resistencia es
+	$$R=\frac{\Delta V}{I}=\frac{L}{\sigma A}=\rho \frac{L}{A}$$
+	    
+	En un sistema formado por dos conductores $\pm Q$ y diferencia de potencial V. La capacidad del sistema esta dada por 
+	$$C=\frac{Q}{V}$$
+	Si ambos conductores están rodeados por un material de permitividad $\epsilon$ y conductividad $\sigma$, la corriente $I=V/R$ esta dada por
+	$$I = \oint_S \vec{J} \cdot \hat{n} dA = \sigma \oint_S \vec{E} \cdot \hat{n} dA$$
+	$$= \sigma \int_V \nabla \cdot \vec{E} d \tau = \frac{\sigma}{\epsilon} \int_V \rho_f d\tau$$
+	$$= \frac{\sigma}{\epsilon}Q=\frac{\sigma}{\epsilon} CV \implies RC=\frac{\epsilon}{\sigma}$$
+	\textbf{Modelo clásico de conductividad: }En presencia de un campo eléctrico, los electrones se mueven por una combinación de movimientos aleatorios y un desplazamiento lento en la dirección opuesta al campo eléctrico.
+	El tiempo medio entre colisiones es $\tau =\lambda / v_t$, donde $v_t $ es la velocidad termal de los electrones. El electrón se mueve con una aceleración de $\vec{a}=q\vec{E}/m$.\\
+	La \textbf{densidad de corriente} esta dada por
+	$$\vec{J} = nq \frac{q \vec{E}}{m}\tau \implies \sigma = \frac{n \lambda q^2}{m v_t}$$
+	    
+	\textbf{Tiempo de relajación:} Corresponde al tiempo en que un conductor aislado llega al equilibrio. La densidad de carga decae a medida que la carga fluye hacia la superficie del conductor.
+	La ecuación de continuidad tiene la forma $\rho(\vec{x}, t) = \rho_0(\vec{x})e^{-t/\tau}$, donde $\tau =\epsilon_0/\sigma$ es el \textbf{tiempo de decaimiento.}\\
+	    
+	\textbf{Ley de Joule: }El trabajo en el tiempo realizado por el campo electrico $\vec{E}$ cuando una carga pasa a traves de un potencial $V$ es $VI$. Por conservacion de energia, es igual a la potencia disipada en calor $P$
+	$$P = I V = I^2 R$$
+	Medida en Watts ($1 W = 1 J/s$)
+	    
+	\textbf{Resistencia y temperatura: }La resistividad de un conductor varia con la temperatura y en muchos casos linealmente de acuerdo a $$\rho = \rho_0 [1+\alpha (T-T_0)]$$
+	donde $\rho_0$ es la resistividad de referencia y $\alpha$ es el coeficiente de temperartura de resistividad.\\
+	Como la resistencia es proporcional a la resistividad
+	$$R=R_0[1+\alpha(T-T_0)]$$
+	    
+	\textbf{Superconductores: }Son materiales que cuando llegan a una \textbf{temperatura critica} $T_c$ su resistencia disminuye hasta cero.\\
+	    
+	\textbf{Corrientes eléctricas: Cilindros Concentricos de radios $a<b$}
+	Su diferencia de potencial entre cilindros es $$V=-\int_b^a\vec{E}\cdot d\vec{l}=\frac{\lambda}{2 \pi \epsilon_0}ln(\frac{b}{a})$$
+	La corriente electrica es 
+	$$I=\frac{2\pi \sigma L}{ln(b/a)}$$
+	Si el material es ohmico, la resistencia es
+	$$R=\frac{V}{I}=\frac{ln(b/a)}{2\pi L \sigma}=\frac{\rho}{2 \pi L}ln(b/a)$$
+	    
+	\subsection{Fuerza electromotriz}
+	Un dispositivo que suministra energia electrica a un circuito se llama fuente de fuerza electromotriz (fem), esta realiza un trabajo no conservativo sobre las cargas. El trabajo por unidad de carga es llamado \textbf{fem} $\varepsilon$ de la fuente, se mide en volt.\\
+	En una \textbf{bateria real}, el voltaje entre los terminales es 
+	$$\Delta V=\varepsilon -Ir$$
+	Cuando no circula corriente en la bateria, el voltaje es igual a la fem $\varepsilon$. Al conectar la bateria la corriente esta dada por
+	$$I=\frac{\Delta V}{R} \implies \varepsilon=IR=Ir \implies I=\frac{\varepsilon}{R+r}$$
+	En una \textbf{bateria ideal} esta mantiene un potencial constante en los dos terminales, es decir, no importa la corriente que pasa a traves de ella, entonces $I=\varepsilon/R$\\
+	La \textbf{potencia} entregada por la fuente es
+	$$\mathcal{P}=\frac{\Delta Q}{\Delta t}\varepsilon=I\varepsilon$$
+	La energia almacenada o trabajo es
+	$$E_{\text{almacenada}}=Q\varepsilon$$
+	    
+	\textbf{Potencia electrica: }La perdida de energia potencial electrica por el paso de corriente por el resistor es
+	$$\mathcal{P}=\frac{d}{dt}(Q\Delta V) =\frac{dQ}{dt}\Delta V=I\Delta V$$
+	Como satisface la ley de Ohm
+	$$\mathcal{P}=I\Delta V =I^2R=\frac{(\Delta V)^2}{R}$$
+	    
+	\section{Circuitos de Corriente Directa}
+	\textbf{Resistores en serie:} La corriente que circula por cada resistor es la misma.
+	La resistencia equivalente es $R_{\textbf{eq}}=R_1+R_2$. Por lo tanto, la caida de potencial esta dado por
+	$$V=V_1+V_2=I(R_1+R_2)\equiv IR_{\text{eq}}$$
+	    
+	\textbf{Resistores en paralelo:} Tienen la misma diferencia de potencial a través de ellos. La resistencia equivalente de un circuito en paralelo es siempre menor que la resistencia de cualquiera de los resistores.\\La resistencia equivalente es $$\frac{1}{R_{\textbf{eq}}}=\frac{1}{R_1}+\frac{1}{R_2}$$La diferencia de potencial es
+	$$V=I_1R_1=I_2R_2$$
+	entonces, la corriente electrica
+	$$I\equiv \frac{V}{R_{\textbf{eq}}}=\frac{V}{R_1}\frac{V}{R_1}=V(\frac{1}{R_1}+\frac{1}{R_1})$$
+	    
+	\textbf{Leyes de Kirchoff}
+	\begin{enumerate}
+		\item \textbf{Ley de la unión:} En una juntura de un circuito donde la corriente se divide, la suma de las corrientes que llegan debe ser igual a la suma de las corrientes que salen. 
+		      $$\sum_{\text{entrada}} I_k = \sum_{\text{salida}} I_k$$
+		\item \textbf{Ley de la espira:} En un circuito cerrado, la suma de los cambios en el potencial deben ser cero.
+		      $$\sum_{\text{espira cerrada}} V_k=0$$
+		              
+	\end{enumerate}
+	    
+	\textbf{Instrumentos de medición eléctrica}
+	\textbf{Galvanómetro:} Componente analógico para medir corriente y voltaje\\
+	\textbf{Amperímetro:} Mide la corriente, las cargas deben pasar directamente a través de el instrumento y estar  conectado en serie. Tiene un resistencia muy baja\\
+	\textbf{Voltímetro:} Mide la diferencia de potencial. Debe unir ambos puntos al voltímetro sin abrir el circuito. Idealmente tiene resistencia infinita así que I = 0 
+	    
+	\textbf{Circuitos RC: }Contienen capacitores y resistores conectados en serie, en los cuales la corriente siempre circula en la misma direccion.
+	Cuano el interruptor esta cerrado por ley de la espira se tiene
+	$$\varepsilon -\frac{q}{C}-IR=0$$
+	En $t=0$ la carga del capacitor es cero, por lo tanto la correinte inicial:
+	$$I_i=\frac{\varepsilon}{R}$$
+	Cuando el capacitor esta cargado al maximo la carga es
+	$$Q=C\varepsilon$$
+	La corriente mientras $\varepsilon > 0$ esta dada por
+	$$q(t)=C\varepsilon(1-e^{-t/RC})=Q(1-e^{-t/RC})$$
+	$$I(t) = \frac{dq}{dt} = \frac{\varepsilon}{R}e^{-t/RC}$$
+	donde $RC=\tau$ es la contante de tiempo del circuito
+	    
+	Una vez $\varepsilon = 0$.
+	Finalmente, la corriente esta dada por
+	$$I(t) = -\frac{Q}{RC}e^{-t/RC}$$
+	    
+	\section{Campo Magnético y Fuerzas Magnéticas}
+	\subsection*{Campos magnéticos}
+	Los campos magnéticos se suelen representar con el símbolo $\vec{B}$ y su dirección apunta hacia el norte magnético. Es posible representarlo utilizando \textbf{lineas de campo magnético}, cuya dirección es perpendicular a la fuerza magnética sobre una carga en movimiento. Se cierran sobre si mismas.\\
+	     
+	\textbf{Fuerza de Lorentz:} La fuerza de Lorentz define la intensidad de campo magnético medida en:
+	$$1 T = 1 \frac{N}{C \cdot m/s}$$
+	$$1 G = 10^{-4} T$$
+	Una carga que se mueve con un ángulo $\phi$ respecto a $\vec{B}$ experimenta una fuerza magnética
+	     
+	$$F =q(\vec{v}\times\vec{B}) =qvB\sin{\phi} $$
+	Si hay un campo electrico presente, la fuerza neta sobre $q$ es:
+	$$\vec{F}=q(\vec{E}+\vec{v}\times \vec{B})$$
+	Si la carga se mueve de perpendicular a $\vec{B}$ experimenta una fuerza máxima 
+	$$F_{\text{max}}=qvB$$
+	Si la carga se mueve paralela a $\vec{B}$ la fuerza magnética es cero.
+	Las fuerzas magnéticas no realizan trabajo, por lo que no pueden acelerar ni frenar partículas cargadas. Solo alteran su dirección.\\
+	     
+	\textbf{Ciclotrón:} El movimiento de una partícula carga en un campo magnético constante es circular con la fuerza de Lorentz apuntando radialmente hacia el centro con magnitud
+	$$F_b = qvB = m \frac{v^2}{r} \implies r = \frac{mv}{qB}$$
+	La  \textbf{velocidad angular} de la partícula esta dada por 
+	$$\omega=\frac{v}{r}=\frac{qB}{m}$$
+	El periodo de movimiento es 
+	$$T=\frac{2\pi r}{v}=\frac{2\pi}{\omega}=\frac{2\pi m}{qB}$$
+	Si una partícula con carga se mueve en un campo magnético, su trayectoria sera una espiral cuyo eje es paralelo al campo magnético.\\
+	     
+	\textbf{Selector de velocidad:} Una carga q con velocidad $\vec{v}$ en un campo eléctrico y uno magnético, para moverse a velocidad constante debe suceder que la 
+	$$\vec{F} = q(\vec{E}+\vec{v}\times\vec{B})$$
+	Si $\vec{F}$ es igual 0 y la velocidad perpendicular al campo magnético
+	$$qE = qvB \implies v = \frac{E}{B}$$
+	     
+	\textbf{Espectrómetro de masa:} Separa iones según carga especifica. 
+	El radio de trayectoria en el campo magnético $\\vec{B}_0$ es
+	$$r = \frac{mv}{qB_0)}\implies \frac{m}{q}=\frac{rB_0}{v}=\frac{rB_0}{E/B}=\frac{rB_0B}{E}$$
+	      
+	\textbf{Fuerza magnética sobre un conductor que transporta corriente:}
+	Si consideramos un alambre de longitud L, sección transversal A, con corriente I en un campo magnético uniforme $\vec{B}$
+	la fuerza magnética sobre q es
+	$$q\vec{v}\times\vec{B}$$
+	Para un volumen $n$
+	$$\vec{F_b} = nAL(q\vec{v}\times\vec{B}) = I\vec{I} \times \vec{B}$$
+	donde $I = nqvA$ y $\vec{L}$
+	    
+	Si $d\vec{l}$ es un segmento del alambre con forma arbitraria
+	$$\vec{F}_B = \int I d\vec{l}\times\vec{B}$$
+	    
+	\textbf{Torque sobre un circuito en un campo magnético uniforme: }Consideramos un circuito cuadrado de lado $a$ con $I$ constante, en un campo magnetico constante $\vec{B}=B\hat{x}$.\\
+	La fuerza magnética esta dada por
+	$$\vec{F}=I\int d\vec{l}\times \vec{B}$$
+	Las fuerzas en cada lado tienen magnitud $F=IBa$ y estas se anulan por sus sentidos opuestos, por lo tanto, la fuerza neta en el circuito cerrado es cero. 
+	En general, el \textbf{torque} para un circuito esta dado por
+	$$\tau=ABI$$
+	donde $A$ es el área de l circuito.
+	\textbf{Fuerza y torque sobre una espira: }La fuerza neta sobre una espira de corriente en un campo magnético es igual a cero.
+	$$\vec{\tau} = \vec{\mu}\times\vec{B} = \mu B sin \theta $$
+	donde $\mu$ es el \textbf{momento dipolar magnetico} de la espira 
+	$$\mu =IA$$
+	    
+	\section{Fuentes de campo magnético}
+	Cuando una corriente estacionaria corre por un alambre, la magnitud $I$ es la misma en todo el circuito, por lo tanto, $\frac{\partial \rho}{\partial t}=0$, entonces la ecuacion de continuidad es $\nabla \cdot \vec{J}=0$.\\
+	    
+	\textbf{Ley de Biot-Savart: }Es analoga a la Ley de Coulomb para electrostática.\\
+	Para un elemento de corriente $Id\vec{l}$, el campo magnético en todo el alambre es
+	$$\vec{B}(\vec{x})=\frac{\mu _0}{4\pi}\int_C \frac{Id\vec{l}\times \hat{r}}{r^2}=\frac{\mu _0}{4\pi}\int_C \frac{Id\vec{l}\times (\vec{x}-\vec{x}')}{|\vec{x}-\vec{x}'|^3}$$
+	    
+	\textbf{Campo magnético de un alambre infinito:} Consideramos un alambre infinito en coordenadas polares. El campo magnético generado por el alambre es
+	$$\vec{B}= \left.\frac{\mu_0 IR}{4\pi}\left(\frac{z}{R^2\sqrt{z^2+R^2}}\right)\right| _{-\infty}^{\infty}=\frac{\mu_0I}{2\pi R}\hat{\phi}$$
+	    
+	\textbf{Fuerza entre alambre paralelos: }Consideramos dos alambre de largo $L>>d$ que transportan corrientes $I_1$ e $I_2$. La fuerza que ejerce el alambre 1 sobre el alambre 2 es
+	$$\vec{F}_2 = -\frac{\mu_0 I_1 I_2 L}{2 \pi d} r_{12}$$
+	donde $r_{12}$ apunto desde el alambre 1 al alambre 2.\\
+	La fuerza que ejerce el alambre 2 sobre el alambre 1 es
+	$$\vec{F_1} = - \vec{F_2}$$
+	Si las corrientes circulan en la misma dirección, las fuerzas son atractivas, de lo contrario se repelen.\\
+	    
+	\textbf{Campo de un anillo de corriente:} El campo magnético de un anillo circular de radio $R$ que lleva una corriente estacionaria $I$, a una distancia $z$ del centro.
+	$$\vec{B}(z) = \frac{\mu_0 I}{4 \pi} \left( \frac{R}{r^3} \right) 2 \pi R \hat{z} = \frac{\mu_0 I}{2} \frac{R^2}{(R^2 + z^2)^{3/2}}\hat{z}$$
+	    
+	\textbf{Tercera ecuacion de Maxwell:} Para una densidad de corriente $\vec{J}$, la corriente esta dada por $I=JdA$ donde $dA$ es la sección transversal. El campo magnético es
+	$$\vec{B}(\vec{x})=\frac{\mu_0}{4 \pi }\int_{\mathcal{V}}\frac{\vec{J}(\vec{x})\times(\vec{x}-\vec{x}')}{|\vec{x}-\vec{x}'|^3}d^3x'$$
+	$$\vec{B}(\vec{x})\equiv \nabla \times \vec{A}$$
+	donde $\vec{A}$ es el \textbf{vector potencial.}\\
+	De lo cual se obtiene que $\nabla \cdot \vec{B}=0$\\
+	    
+	\textbf{Ley de Ampére:} Si es que se tiene un alambre que encierra una corriente, sin importar la forma del alambre, se tiene que
+	$$\oint \vec{B} d\vec{l} = \mu_0 I_{enc}$$
+	Si el flujo de carga esta dado por la densidad de corriente $\vec{J}$, la corriente encerrada es
+	$$I_{\text{enc}}=\int_{\mathcal{S}} \vec{J}\cdot d\vec{a}$$
+	donde $\mathcal{S}$ es la superficie encerrada por el circuito. Otra forma de la ley de Ampere (cuarta ecuacion de Maxwell) es
+	$$\nabla \times \vec{B}=\mu_0\vec{J}$$
+\end{multicols*}
+\newpage
+
+\section{Consideraciones:}
+\begin{gather}
+k = \frac{1}{4 \pi \epsilon_0}
+\intertext{Si U es la energia potencial:}
+F = - \nabla U
+\intertext{El diferencial de carga esta dado por:}
+  dq =
+  \begin{cases}
+    \lambda dl, \text{En el caso que sea 1D}\\
+    \sigma dA, \text{ con } dA = \begin{cases} dx\ dy\\ r dr d\theta \text{ en polares} \end{cases}\text{En el caso que sea 2D}\\
+    \rho dV , \text{ con } dV = \begin{cases} dx\ dy\ dz\\ r^2 sin(\theta) dr d\theta d\phi \text{ en esfericas} \end{cases}\text{En el caso que sea 3D}
+  \end{cases}
+\end{gather}
+\end{document}
