@@ -519,7 +519,16 @@
 	$$I_{\text{enc}}=\int_{\mathcal{S}} \vec{J}\cdot d\vec{a}$$
 	donde $\mathcal{S}$ es la superficie encerrada por el circuito. Otra forma de la ley de Ampere (cuarta ecuacion de Maxwell) es
 	$$\nabla \times \vec{B}=\mu_0\vec{J}$$
+
+	\section{Inducción magnética}
+	\textbf{Ley de Faraday:}
+	La ley de Faraday establece que la FEM inducida en una espira cerrada corresponde a
+	$$\mathcal{E} = -\frac{d \phi_{B}}{dt}$$
+	O sea, el negativo de la variación del flujo magnético a través de una espira con respecto al tiempo.\\
+	En el caso de trabajar con una bobina con N espiras idénticas, se tiene
+	$$\mathcal{E} = -N \frac{d \phi_{B}}{dt}$$
 \end{multicols*}
+
 \newpage
 
 \section{Consideraciones:}
@@ -534,5 +543,12 @@ F = - \nabla U
     \sigma dA, \text{ con } dA = \begin{cases} dx\ dy\\ r dr d\theta \text{ en polares} \end{cases}\text{En el caso que sea 2D}\\
     \rho dV , \text{ con } dV = \begin{cases} dx\ dy\ dz\\ r^2 sin(\theta) dr d\theta d\phi \text{ en esfericas} \end{cases}\text{En el caso que sea 3D}
   \end{cases}
+\end{gather}
+
+\section{Integrales útiles}
+\begin{gather}
+	\int \frac{dx}{x^2 + a^2} = \frac{1}{2} arctan(\frac{x}{a})\\
+	\int \frac{x dx}{(x^2 + a^2)^{3/2}} = \frac{-1}{\sqrt{x^2 + a^2}}\\
+	\int \frac{dx}{(x^2 + a^2)^{3/2}} = \frac{1}{a^{2}} \frac{x}{\sqrt{x^2 + a^2}}
 \end{gather}
 \end{document}
