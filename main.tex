@@ -315,14 +315,18 @@
 	$$R=\frac{\rho L}{A}$$
 	Donde $\rho$ es la resistividad del material.
 	Se define la \textbf{conductividad }del material como $\sigma=1/\rho$.\\
-	Si se esta en presencia de \textbf{conductores isótropos}, la ley de Ohm puede ser escrita localmente como $$\vec{J}(\vec{x})=\sigma\vec{E}(\vec{x})$$
+	Si se esta en presencia de \textbf{conductores isótropos}, la ley de Ohm puede ser escrita localmente como 
+  $$\vec{J}(\vec{x})=\sigma\vec{E}(\vec{x})$$
 	Para un cilindro de largo L y sección transversal A con una diferencia de potencial $\Delta V$, la magnitud de campo eléctrico es
 	$$E=\frac{\Delta V}{L}$$
 	La densidad de corriente es
 	$$J= \frac{I}{A}=\sigma E=\sigma \frac{\Delta V}{L }\implies \Delta V = (\frac{L}{\sigma A})I$$
 	Por lo tanto, la resistencia es
 	$$R=\frac{\Delta V}{I}=\frac{L}{\sigma A}=\rho \frac{L}{A}$$
-	    
+  O en forma diferencial para un solido de revolucion:
+  \begin{equation}
+    dR = \frac{\rho dZ}{A(dZ)} 
+  \end{equation}
 	En un sistema formado por dos conductores $\pm Q$ y diferencia de potencial V. La capacidad del sistema esta dada por 
 	$$C=\frac{Q}{V}$$
 	Si ambos conductores están rodeados por un material de permitividad $\epsilon$ y conductividad $\sigma$, la corriente $I=V/R$ esta dada por
@@ -390,14 +394,28 @@
 		      $$\sum_{\text{espira cerrada}} V_k=0$$
 		              
 	\end{enumerate}
-	    
+
+  \subsection{Divisor de Voltaje:}
+    Si se tiene un circuito con N resistencias en serie, el voltaje entre los dos terminales
+    de una de ellas
+    estará dado por:
+    \begin{equation}
+      V_{R_i} = \frac{R_i}{\sum_i^N R_i}V_{entrada}
+    \end{equation}
+      
+  % \subsection{Divisor de Corriente:}
+  %   Si se tiene un circuito con N resistencias en paralelo, la corriente que atraviesa de una de ellas 
+  %   estará dada por:
+  %   \begin{equation}
+  %     I_{R_i} = \frac{R_i}{\sum_i^N R_i}I_{entrada}
+  %   \end{equation}
 	\textbf{Instrumentos de medición eléctrica}
 	\textbf{Galvanómetro:} Componente analógico para medir corriente y voltaje\\
 	\textbf{Amperímetro:} Mide la corriente, las cargas deben pasar directamente a través de el instrumento y estar  conectado en serie. Tiene un resistencia muy baja\\
 	\textbf{Voltímetro:} Mide la diferencia de potencial. Debe unir ambos puntos al voltímetro sin abrir el circuito. Idealmente tiene resistencia infinita así que I = 0 
 	    
 	\textbf{Circuitos RC: }Contienen capacitores y resistores conectados en serie, en los cuales la corriente siempre circula en la misma direccion.
-	Cuano el interruptor esta cerrado por ley de la espira se tiene
+	Cuando el interruptor esta cerrado por ley de la espira se tiene
 	$$\varepsilon -\frac{q}{C}-IR=0$$
 	En $t=0$ la carga del capacitor es cero, por lo tanto la correinte inicial:
 	$$I_i=\frac{\varepsilon}{R}$$
