@@ -73,22 +73,19 @@
 	\subsubsection{Definición:}
   Es el trabajo realizado por unidad de carga para mover 
   dicha carga por un campo electrostático (conservativo).
-	\begin{equation}
+  \begin{gather}
 	  V(r) = -\int^{\vec{r}}_\infty \vec{E} \cdot d\vec{l}
-	\end{equation}
-	El potencial esta dado por
-  \begin{equation}
+    \intertext{El potencial esta dado por}
     V(\vec{r}) = \begin{cases} k \sum_i \frac{q_i}{|\vec{r} - \vec{r'}|} \text{ para cargas puntuales}
     \\ k \int \frac{1}{|\vec{r} - \vec{r'}|} dq \text{ para distribuciones continuas} \end{cases}
-  \end{equation} 
-	La diferencia de potencial entre dos puntos $\vec{r}_a$ y $\vec{r}_b$ es
-  \begin{equation}
+    \intertext{La diferencia de potencial entre dos puntos $\vec{r}_a$ y $\vec{r}_b$ es}
     \Delta V_{a \rightarrow b} = V(\vec{r}_b)-V(\vec{r}_a)=- \int_{\vec{r}_a}^{\vec{r}_b}\vec{E}\cdot d\vec{l}
-  \end{equation}
+  \end{gather}
 	Importante notar:
 	\begin{equation}
 	  E = - \nabla V
 	\end{equation}
+
 	\subsubsection{Dipolo eléctrico:}
   Consiste de dos cargas iguales pero opuestas, separadas por una distancia d
 	    
@@ -97,19 +94,14 @@
     \frac{1}{4 \pi \epsilon_0}(\frac{q}{r_+} - \frac{q}{r_-})
   \end{equation}
 	Donde $r_+$ es la distancia desde P hacia la carga positiva y $r_-$ desde P a la carga negativa.
-	    
-	Lo que es equivalente a 
-  \begin{equation}
+  \begin{gather}
+    \intertext{Lo que es equivalente a}
     V(\vec{r})= \frac{1}{4 \pi \epsilon_0}\frac{\vec{p}\cdot\hat{r}}{r^2}
-  \end{equation}
-	Donde $\vec{p}$ es el \textbf{momento dipolar} definido por
-  \begin{equation}
+    \intertext{Donde $\vec{p}$ es el \textbf{momento dipolar} definido por}
     \vec{p}=q\vec{r}'_+-q\vec{r}'_-=q(\vec{r}'_+-\vec{r}'_-)=qd
-  \end{equation}
-	Para una distribución continua de carga $\rho$
-  \begin{equation}
+    \intertext{Para una distribución continua de carga $\rho$}
     \vec{p}= \int \vec{r}'\rho(\vec{r}') d \tau'
-  \end{equation}
+  \end{gather}
 	Densidad de carga lineal: $dq'=\lambda(\vec{r}')dl'$\\
 	Densidad de carga superficial: $dq'=\sigma(\vec{r}')da'$\\
 	Densidad de carga volumétrica: $dq'= \rho(\vec{r}')d\tau'$\\
@@ -550,15 +542,78 @@
   \begin{gather}
     \intertext{Si se toma un selonoide de longitud l con un numero N de vueltas y corriente I}
     B = \mu_0 \frac{N}{l}I
+    \intertext{con}
+    n = \frac{N}{l}
   \end{gather}
 
+  \subsubsection{Toroides:}
+  Es un alambre conductor enrollado al rededor de un toro. Si $b < r < c$
+  \begin{equation}
+    B = \frac{\mu_0 NI}{2 \pi r}
+  \end{equation}
 	\section{Inducción magnética}
-	\subsubsection{Ley de Faraday:}
+  Se induce una corriente eléctrica en una espira mediante un cambio
+
+  \subsection{Flujo magnetico}
+    \begin{equation}
+      \phi_B = \int \vec{B} \cdot d \vec{A} = \int B dA cos(\theta)
+    \end{equation} 
+    Y si la superficie es cerrada $\phi_b = 0$
+
+  \subsubsection{Flujo magnetico en una espira rectangular}
+  En un campo magnetico generado por un alambre infinito que conduce corriente I
+  \begin{gather}
+    \vec{B} = \frac{\mu_0 I}{2 \pi r} \hat{\phi}
+    \intertext{Entonces el flujo magnetico a traves de una espira rectangular de alto \textbf{a},
+               ancho \textbf{b} a distancia \textbf{c} del cable es}
+    \phi_B = \int \vec{B} d \vec{A} = \int_c^{c+a} \frac{\mu_0 I}{2 \pi r}b dr = \frac{\mu_0 I}{2 \pi}b\ ln(\frac{a+c}{c})
+  \end{gather}
+    
+  \subsubsection{Ley de Lenz}
+  La dirección de la corriente inducida es tal que
+  el campo magnético creado por ella se opone al cambio de flujo
+  magnetico.
+
+  \subsection{Ley de Faraday}
 	La ley de Faraday establece que la FEM inducida en una espira cerrada corresponde a
 	$$\mathcal{E} = -\frac{d \phi_{B}}{dt}$$
 	O sea, el negativo de la variación del flujo magnético a través de una espira con respecto al tiempo.\\
 	En el caso de trabajar con una bobina con N espiras idénticas, se tiene
 	$$\mathcal{E} = -N \frac{d \phi_{B}}{dt}$$
+  Un fem puede ser inducido si:
+  \begin{enumerate}
+    \item Varia la magnitud del campo magnetico
+    \item Varía el area encerrada por la espira
+    \item Varía el angulo entre B y A
+  \end{enumerate}
+  Notar que
+  \begin{equation}
+    \phi = \int \vec{B} \cdot d\vec{a} \implies \frac{d \phi}{dt} 
+    = \int \frac{\partial \vec{B}}{\partial t} \cdot d \vec{a}
+  \end{equation}
+  por lo que
+  \begin{equation}
+    \oint \vec{E} \cdot d\vec{l} = -\int \frac{\partial \vec{B}}{\partial t} \cdot d \vec{a}
+    \implies \nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}
+  \end{equation}
+
+  \subsubsection{Fem de movimiento}
+  Si se tiene una barra de largo l de un conductor que se 
+  mueve a traves de un campo magnetico a una velocidad $\vec{v}$,
+  los electrones del conductor experimentan una fuerza
+  \begin{equation}
+    \vec{F}_B = q \vec{v} \times \vec{B}
+  \end{equation}
+  Esto hará que las cargas se muevan a los extremos de el conductor
+  hasta que la fuerza electrica se equilibrie con la fuerza magnetica,
+  creando una diferencia de potencial.
+  \begin{equation}
+    qvB = qE \implies E = vB \Delta V = E l = B l v
+  \end{equation}
+
+	\section{Inductancia}
+  \subsubsection{Inductancia mutua}
+
 \end{multicols*}
 
 \newpage
