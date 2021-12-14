@@ -610,9 +610,39 @@
   \begin{equation}
     qvB = qE \implies E = vB \Delta V = E l = B l v
   \end{equation}
+  Con la ley de Faraday:
+  \begin{gather}
+    \phi_B = \int \vec{B} \cdot d \vec{A}\\
+    \varepsilon = - \frac{d \phi_B}{dt} = -B \frac{dA}{dt} = - B \frac{lv\ dx}{dt} = - Blv
+  \end{gather}
+
+  Generalizando, para cualquier espira conductora cerrada, la fem total es:
+  \begin{equation}
+    \varepsilon = \oint (\vec{v} \times \vec{B}) \cdot d\vec{l}
+  \end{equation}
 
 	\section{Inductancia}
   \subsubsection{Inductancia mutua}
+  Si se tiene una bobina con una corriente cambiante $i_1$, se establecera un campo magnetico
+  $\vec{B}$. Si es que existe otra bobina dentro de este campo magnetico, la fem inducida sobre
+  esta será equivalente a:
+  \begin{equation}
+    \varepsilon_2 = - N_2 \frac{d \phi_{B2}}{dt}
+  \end{equation}
+  donde $\phi_{B2}$ corresponde a el flujo magnetico de B sobre la segunda bobina.
+  
+  La relación entre la corriente en la primera bobina ($i_1$) y el flujo magnetico ($\phi_B$)
+  esta dada por una constante llamada \textbf{inductancia mutua}. 
+  \begin{gather}
+    N_2 \phi_{B2} = M i_i\\
+    \varepsilon_2 = - M \frac{d i_1}{dt}
+    \intertext{donde:}
+    M = \frac{N_2 \phi_{B2}}{i_1} = \frac{N_1 \phi_{B1}}{i_2}
+  \end{gather}
+  
+  \subsubsection{FEM autoinducida}
+  En un circuito en el que circula una corriente i, se generará un campo magnetico.
+  Este campo magnetico a su vez, generara una FEM en el mismo circuito,
 
 \end{multicols*}
 
