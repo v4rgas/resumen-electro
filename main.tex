@@ -642,8 +642,21 @@
   
   \subsubsection{FEM autoinducida}
   En un circuito en el que circula una corriente i, se generará un campo magnetico.
-  Este campo magnetico a su vez, generara una FEM en el mismo circuito,
-
+  Este campo magnetico a su vez, generara una FEM en el mismo circuito. Este FEM
+  para una bobina con N espiras puede ser calculado como
+  \begin{equation}
+    \varepsilon =  -N \frac{d \phi_B}{dt} = -L \frac{di}{dt}
+  \end{equation}
+  donde L es la autoinductancia del circuito y esta dada por:
+  \begin{equation}
+    L = \frac{N \phi_B}{i} = - \frac{\varepsilon}{di/dt}
+  \end{equation}
+  Para un solenoide de N vueltas y longitud l, con $l >> r$,
+  el flujo magnetico a traves de cada vuelta de área A es:
+  \begin{equation}
+    \phi_B = BA = \mu_0 \frac{N}{l}iA \implies L = \frac{N \phi_B}{i} = \mu_0 \frac{N^2}{l} A
+  \end{equation}
+  La inductancia mide la oposicion a un cambio en la corriente.
 \end{multicols*}
 
 \newpage
